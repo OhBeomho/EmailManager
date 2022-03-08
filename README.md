@@ -7,3 +7,4 @@ And the password for the account is stored as a
 # Libraries
 - [Java SMTP](https://mvnrepository.com/artifact/javax.mail/mail/1.4.7)
 - [JavaFX](https://openjfx.io)
+- Java SE 8
