@@ -3,12 +3,20 @@ package manager.email;
 import java.io.*;
 
 public class Account {
-	public static final File ACCOUNTS_FILE = new File(Account.class.getResource("resources/accounts.txt").getFile());
+	public static final File ACCOUNTS_FILE = new File("C:/EmailManager/accounts.txt");
 
 	// 비밀번호는 16진수로 저장된다.
 	private String id, password, email, ePassword;
 
 	public Account(String id, String password, String email, String ePassword) {
+		if (!ACCOUNTS_FILE.exists()) {
+			try {
+				ACCOUNTS_FILE.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
 		this.id = id;
 		this.password = password;
 		this.email = email;

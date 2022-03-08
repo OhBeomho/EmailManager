@@ -67,7 +67,7 @@ public class Controller implements Initializable {
 		ArrayList<Email> emails = new ArrayList<>();
 
 		try {
-			File file = new File("bin\\manager\\email\\resources\\" + accountId + "Emails.txt");
+			File file = new File("C:/EmailManager/" + accountId + "Emails.txt");
 			if (!file.exists()) {
 				file.createNewFile();
 			}
@@ -302,7 +302,7 @@ public class Controller implements Initializable {
 			if (Email.isEmailFormat(e)) {
 				if (!emailList.getItems().contains(e)) {
 					Email email = new Email(e);
-					email.writeToFile("bin\\manager\\email\\resources\\" + currentAccount.getId() + "Emails.txt");
+					email.writeToFile("C:/EmailManager/" + currentAccount.getId() + "Emails.txt");
 					emails.add(email);
 					emailList.getItems().add(e);
 				} else {
